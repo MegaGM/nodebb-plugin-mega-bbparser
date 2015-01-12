@@ -1,0 +1,14 @@
+{
+	"name": "nodebb-plugin-mega-bbparser",
+	"version": "0.0.10",
+	"description": "Mega BB-code parser for NodeBB",
+	"main": "library.js",
+	"nbbpm": {
+		"compatibility": "^0.6.0"
+	},
+	"readme": "ERROR: No README data found!",
+	"scripts": {},
+	"_id": "nodebb-plugin-mega-bbparser@0.0.8",
+	"_shasum": "8de5de09870f143a11f63fce76ad0d444ad77189",
+	"_from": "nodebb-plugin-mega-bbparser@"
+}

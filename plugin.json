@@ -1,0 +1,14 @@
+{
+	"id": "nodebb-plugin-mega-bbparser",
+	"name": "Mega BBParser",
+	"library": "./library.js",
+	"less": [
+		"public/less/default.less"
+	],
+	"hooks": [
+		{ "hook": "static:app.load", "method": "init" },
+		{ "hook": "filter:parse.post", "method": "parsePost", "priority": 7 },
+		{ "hook": "filter:parse.signature", "method": "parseSignature", "priority": 7 },
+		{ "hook": "filter:parse.raw", "method": "parseRaw", "priority": 7 }
+	]
+}
