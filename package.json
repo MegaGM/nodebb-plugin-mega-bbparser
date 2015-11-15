@@ -2,7 +2,7 @@
 	"name": "nodebb-plugin-mega-bbparser",
 	"version": "0.0.11",
 	"nbbpm": {
-		"compatibility": "^0.7.1 || ^0.8.0"
+		"compatibility": "^0.7.1 || ^0.8.0 || ^0.9.0"
 	},
 	"description": "Mega BB-code parser for NodeBB",
 	"main": "library.js",
