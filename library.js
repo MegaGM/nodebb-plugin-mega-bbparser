@@ -1,12 +1,12 @@
 ( function ( ) {
 	'use strict';
 
-	var async = module.parent.require('async'),
-	nconf = module.parent.require('nconf'),
+	var async = require.main.require('async'),
+	nconf = require.main.require('nconf'),
 	parser, plugin = {
 		init: function ( params, callback ) {
 			var codes = [ ];
-			
+
 			codes.push({
 				regexp: /\[За\]/gi,
 				content: '<div class="bbvote-case za" align="center"><span style="font-size:12pt;">ЗА</span></div>'
@@ -19,22 +19,22 @@
 
 			codes.push({
 				regexp: /\[Одобрено\]/gi,
-				content: '<div align="center"><img class="emoji emoji-fix" src="http://n.com/plugins/nodebb-plugin-emoji/images/wink.png" border="0" alt="Кандидат одобрен"><br /></div>'
+				content: '<div align="center"><img class="emoji emoji-fix" src="/plugins/nodebb-plugin-mega-bbparser/assets/accepted.png" border="0" alt="Кандидат одобрен"><br /></div>'
 			});
 
 			codes.push({
 				regexp: /\[Одобрено:(\d+):(\d+)\]/gi,
-				content: '<div align="center"><img class="emoji emoji-fix" src="http://ya.1nga.ru/int/accepted.png" border="0" alt="Кандидат одобрен"><br /><span style="color:#008800">$1 За</span> / <span style="color:#dd0000">$2 Против</span></div>'
+				content: '<div align="center"><img class="emoji emoji-fix" src="/plugins/nodebb-plugin-mega-bbparser/assets/accepted.png" border="0" alt="Кандидат одобрен"><br /><span style="color:#008800">$1 За</span> / <span style="color:#dd0000">$2 Против</span></div>'
 			});
 
 			codes.push({
 				regexp: /\[Отказано\]/gi,
-				content: '<div align="center"><img class="emoji emoji-fix" src="http://ya.1nga.ru/int/declined.png" border="0" alt="Кандидату отказано"><br /></div>'
+				content: '<div align="center"><img class="emoji emoji-fix" src="/plugins/nodebb-plugin-mega-bbparser/assets/declined.png" border="0" alt="Кандидату отказано"><br /></div>'
 			});
 
 			codes.push({
 				regexp: /\[Отказано:(\d+):(\d+)\]/gi,
-				content: '<div align="center"><img class="emoji emoji-fix" src="http://ya.1nga.ru/int/declined.png" border="0" alt="Кандидату отказано"><br /><span style="color:#008800">$1 За</span> / <span style="color:#dd0000">$2 Против</span></div>'
+				content: '<div align="center"><img class="emoji emoji-fix" src="/plugins/nodebb-plugin-mega-bbparser/assets/declined.png" border="0" alt="Кандидату отказано"><br /><span style="color:#008800">$1 За</span> / <span style="color:#dd0000">$2 Против</span></div>'
 			});
 
 			codes.push({
@@ -50,12 +50,12 @@
 			codes.push({
 				regexp: /-&gt;(.*)&lt;-/gi,
 				content: '<p class="text-center">$1</p>'
-			});	
+			});
 
 			codes.push({
 				regexp: /-&gt;(.*)-&gt;/gi,
 				content: '<p class="text-right">$1</p>'
-			});	
+			});
 
 			parser = function ( data, callback ) {
 				var iterator = function ( code, callback ) {
